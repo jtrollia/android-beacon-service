@@ -1,4 +1,5 @@
-package com.atelierdusaintex.atelierdigital;
+package com.{package};
+
 
 import android.app.Service;
 import android.content.Intent;
@@ -17,7 +18,7 @@ public class MyBeaconService extends Service {
 
     public static final long scanPe = 1000;
     public static final long waitPe = 1000;
-    public static final String ESTIMOTE_PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+    public static final String ESTIMOTE_PROXIMITY_UUID = "{ID}";
     public static final Region ALL_ESTIMOTE_BEACONS = new Region("regionId", ESTIMOTE_PROXIMITY_UUID, null, null);
     public BeaconManager beaconManager = new BeaconManager(this);
 
@@ -50,7 +51,7 @@ public class MyBeaconService extends Service {
             @Override
             public void onExitedRegion(Region region) {
 
-                // Goodbye message ?
+                // ...
             }
         });
     }
@@ -76,9 +77,9 @@ public class MyBeaconService extends Service {
     }
 
 
-    // Update rank broadcast
+    // Send broadcast
     public void BeaconFoundBroadcast() {
-        Intent intent = new Intent("com.atelierdusaintex.atelierdigital.BEACON_FOUND");
+        Intent intent = new Intent(".BEACON_FOUND");
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
